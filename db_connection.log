@@ -1,0 +1,60 @@
+2024-09-29 16:40:57,152:ERROR:Error al conectar a la base de datos: ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]SQL Server Network Interfaces: Error Locating Server/Instance Specified [xFFFFFFFF].  (-1) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (-1)')
+2024-09-29 16:40:57,153:ERROR:Error al probar la conexión a la base de datos: ('08001', '[08001] [Microsoft][ODBC Driver 17 for SQL Server]SQL Server Network Interfaces: Error Locating Server/Instance Specified [xFFFFFFFF].  (-1) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 17 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 17 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to SQL Server. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (-1)')
+2024-09-29 16:41:22,518:INFO:Conexión exitosa. Versión de la base de datos: Microsoft SQL Server 2022 (RTM) - 16.0.1000.6 (X64) 
+	Oct  8 2022 05:58:25 
+	Copyright (C) 2022 Microsoft Corporation
+	Enterprise Evaluation Edition (64-bit) on Windows 10 Pro 10.0 <X64> (Build 19045: )
+
+2024-09-29 16:41:53,658:INFO:Conexión exitosa. Versión de la base de datos: Microsoft SQL Server 2022 (RTM) - 16.0.1000.6 (X64) 
+	Oct  8 2022 05:58:25 
+	Copyright (C) 2022 Microsoft Corporation
+	Enterprise Evaluation Edition (64-bit) on Windows 10 Pro 10.0 <X64> (Build 19045: )
+
+2024-09-29 16:41:53,718:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-29 16:41:53,718:INFO:[33mPress CTRL+C to quit[0m
+2024-09-29 16:41:53,721:INFO: * Restarting with stat
+2024-09-29 16:41:54,033:INFO:Conexión exitosa. Versión de la base de datos: Microsoft SQL Server 2022 (RTM) - 16.0.1000.6 (X64) 
+	Oct  8 2022 05:58:25 
+	Copyright (C) 2022 Microsoft Corporation
+	Enterprise Evaluation Edition (64-bit) on Windows 10 Pro 10.0 <X64> (Build 19045: )
+
+2024-09-29 16:41:54,046:WARNING: * Debugger is active!
+2024-09-29 16:41:54,049:INFO: * Debugger PIN: 580-722-637
+2024-09-29 16:43:10,832:INFO:Conexión exitosa. Versión de la base de datos: Microsoft SQL Server 2022 (RTM) - 16.0.1000.6 (X64) 
+	Oct  8 2022 05:58:25 
+	Copyright (C) 2022 Microsoft Corporation
+	Enterprise Evaluation Edition (64-bit) on Windows 10 Pro 10.0 <X64> (Build 19045: )
+
+2024-09-29 16:43:40,227:INFO:Conexión exitosa. Versión de la base de datos: Microsoft SQL Server 2022 (RTM) - 16.0.1000.6 (X64) 
+	Oct  8 2022 05:58:25 
+	Copyright (C) 2022 Microsoft Corporation
+	Enterprise Evaluation Edition (64-bit) on Windows 10 Pro 10.0 <X64> (Build 19045: )
+
+2024-09-29 16:43:40,249:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-29 16:43:40,249:INFO:[33mPress CTRL+C to quit[0m
+2024-09-29 16:43:40,250:INFO: * Restarting with stat
+2024-09-29 16:43:40,552:INFO:Conexión exitosa. Versión de la base de datos: Microsoft SQL Server 2022 (RTM) - 16.0.1000.6 (X64) 
+	Oct  8 2022 05:58:25 
+	Copyright (C) 2022 Microsoft Corporation
+	Enterprise Evaluation Edition (64-bit) on Windows 10 Pro 10.0 <X64> (Build 19045: )
+
+2024-09-29 16:43:40,566:WARNING: * Debugger is active!
+2024-09-29 16:43:40,569:INFO: * Debugger PIN: 580-722-637
+2024-09-29 16:45:50,814:INFO:Conexión exitosa. Versión de la base de datos: Microsoft SQL Server 2022 (RTM) - 16.0.1000.6 (X64) 
+	Oct  8 2022 05:58:25 
+	Copyright (C) 2022 Microsoft Corporation
+	Enterprise Evaluation Edition (64-bit) on Windows 10 Pro 10.0 <X64> (Build 19045: )
+
+2024-09-29 16:45:50,834:INFO:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-09-29 16:45:50,834:INFO:[33mPress CTRL+C to quit[0m
+2024-09-29 16:45:50,836:INFO: * Restarting with stat
+2024-09-29 16:45:51,141:INFO:Conexión exitosa. Versión de la base de datos: Microsoft SQL Server 2022 (RTM) - 16.0.1000.6 (X64) 
+	Oct  8 2022 05:58:25 
+	Copyright (C) 2022 Microsoft Corporation
+	Enterprise Evaluation Edition (64-bit) on Windows 10 Pro 10.0 <X64> (Build 19045: )
+
+2024-09-29 16:45:51,154:WARNING: * Debugger is active!
+2024-09-29 16:45:51,157:INFO: * Debugger PIN: 580-722-637
