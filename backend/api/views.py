@@ -40,42 +40,37 @@ class SensorDataViewSet(viewsets.ModelViewSet):
             return None
 
     def list(self, request, *args, **kwargs):
-        # Obtener todos los datos
-        data = list(SensorData.objects.all().values(
+        # Obtener los últimos 50 datos ordenados por 'id' de forma descendente y luego invertirlos para trabajar en orden cronológico
+        data = list(SensorData.objects.all().order_by('-id')[:50].values(
             'id', 'mag_x', 'mag_y', 'mag_z', 'barometro', 'ruido',
             'giro_x', 'giro_y', 'giro_z', 'acel_x', 'acel_y', 'acel_z',
             'vibracion', 'gps_lat', 'gps_lon'
-        ))
+        ))[::-1]  # Invertir para que estén en orden cronológico ascendente
 
-        window_size = 50
         grouped_data = []
-        
+
         sensor_fields = [
             'mag_x', 'mag_y', 'mag_z', 'barometro', 'ruido',
             'giro_x', 'giro_y', 'giro_z', 'acel_x', 'acel_y', 'acel_z',
             'vibracion', 'gps_lat', 'gps_lon'
         ]
 
-        # Usar ventana deslizante para procesar los datos
-        for start_idx in range(len(data) - window_size + 1):
-            window_data = data[start_idx:start_idx + window_size]
-            
-            avg_data = {'id': start_idx + 1}  # ID basado en el índice inicial
-            stats_data = {'id': start_idx + 1}
+        avg_data = {'id': 'latest_50'}
+        stats_data = {'id': 'latest_50'}
 
-            for field in sensor_fields:
-                # Extraer valores para este campo en la ventana actual
-                field_values = [item[field] for item in window_data]
-                
-                # Calcular media
-                avg_data[field] = sum(field_values) / window_size
-                
-                # Calcular estadísticas
-                stats_data[f"{field}_stats"] = self.calculate_statistics(field_values)
+        # Calcular promedios y estadísticas para cada campo
+        for field in sensor_fields:
+            field_values = [item[field] for item in data]
 
-            grouped_data.append({
-                'averages': avg_data,
-                'statistics': stats_data
-            })
+            # Calcular media
+            avg_data[field] = sum(field_values) / len(field_values)
+
+            # Calcular estadísticas
+            stats_data[f"{field}_stats"] = self.calculate_statistics(field_values)
+
+        grouped_data.append({
+            'averages': avg_data,
+            'statistics': stats_data
+        })
 
         return Response(grouped_data)
