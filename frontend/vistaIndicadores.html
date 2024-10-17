@@ -6,7 +6,8 @@
     <title>Dashboard Monitoreo</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-boxplot@0.2.0/dist/chartjs-chart-boxplot.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment"></script>
 </head>
 <body>
     <div class="container">
@@ -36,6 +37,7 @@
                 <div class="chart">
                     <canvas id="standardizedChart"></canvas>
                 </div>
+
                 <div class="chart">
                     <canvas id="magnetometroChart"></canvas>
                 </div>
@@ -56,6 +58,11 @@
                 </div>
                 <div class="chart">
                     <canvas id="vibracionChart"></canvas>
+                </div>
+                <h1>Estado de históricos</h1>
+                <div class="chart">
+                    
+                    <canvas id="historicalChart"></canvas>
                 </div>
             </div>
         </div>

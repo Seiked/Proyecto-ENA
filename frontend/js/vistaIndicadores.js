@@ -311,9 +311,71 @@ function createStandardizedChart() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+async function fetchHistoricalData() {
+    try {
+        const response = await fetch('http://localhost:8000/api/v1/api/sensor-data/');
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching historical data:', error);
+        return null;
+    }
+}
+
+function createHistoricalChart(data) {
+    const ctx = document.getElementById('historicalChart').getContext('2d');
+    
+    const datasets = Object.keys(data[0]).filter(key => key !== 'timestamp').map(key => ({
+        label: key,
+        data: data.map(entry => entry[key]),
+        borderColor: `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`,
+        tension: 0.1,
+        fill: false
+    }));
+
+    return new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: data.map(entry => new Date(entry.timestamp).toLocaleString()),
+            datasets: datasets
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Datos Históricos'
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false
+                }
+            },
+            scales: {
+                x: {
+                    type: 'time',
+                    time: {
+                        unit: 'day'
+                    }
+                },
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', async function() {
     initCharts();
-    initStandardizedChart();  
+    initStandardizedChart();
     fetchData();
     setInterval(fetchData, 10000);  // Polling cada 10 segundos
+
+    // Agregar la nueva gráfica histórica
+    const historicalData = await fetchHistoricalData();
+    if (historicalData) {
+        createHistoricalChart(historicalData);
+    }
 });
